@@ -46,10 +46,18 @@ class Tree(object):
             []
 
         """
+        found_nodes = [] #create an empty list for future nodes 
+        to_visit = [self.root] #start my search at the root of my tree
 
-        # TODO: Complete this function
+        while to_visit: #while loop until this condition holds
+            current = to_visit.pop(0) #popping the first item of the list
 
-        pass
+            if current.data == data: #if the current data equals data im looking for 
+                found_nodes.append(current) #then append to my found nodes 
+
+            to_visit.extend(current.children) #extend my to_visit list to include next nodes
+        return found_nodes #return a list of new nodes 
+
 
 
 if __name__ == "__main__":
