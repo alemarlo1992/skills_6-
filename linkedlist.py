@@ -48,17 +48,18 @@ def only_vowels(llist):
         >>> new_llist.head.data == "apple"
         True
     """
-    current = llist.head
-    new_llist = LinkedList()
+    current = llist.head # set current to the head of llist
+    new_llist = LinkedList() #make a new linked list that will hold nodes that start with vowels 
     vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
 
-    while current:  
-        if current.data[0] in vowels: 
-            vowels_node = Node(current.data)
+    while current is not None:  
+        if current.data[0] in vowels: #access the first letter of the node.data
+            vowels_node = Node(current.data) #created a node object
 
-            new_llist.add_node(current.data)
+            new_llist.add_node(current.data) #added that node to the new_llist 
 
-        current = current.next
+        current = current.next #moves on to check the next node. 
+
     return new_llist
     
 
